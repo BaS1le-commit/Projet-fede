@@ -4,6 +4,7 @@ echo "Setup Python 3.9 sur Kali Linux..."
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install cmake -y
+sudo apt autoremove -y
 
 if ! command -v python3.9 &> /dev/null; then
     echo "Python 3.9 non trouvé. Compilation et installation..."
