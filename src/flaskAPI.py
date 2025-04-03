@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request , render_template
+from flask import Flask, Response, render_template, send_from_directory
 from src.Log import Log
 import os
 
@@ -42,6 +43,17 @@ def mail():
 def log():
     return getCsv('src/Data/presence_log.csv'), 200
 
+@app.route('/video_feed')
+def video_feed():
+    return Response(generate_frames(), mimetype='text/event-stream')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/image/<filename>')
+def serve_image(filename):
+    return send_from_directory('image', filename)
 
 def main_api():
     app.run(host='0.0.0.0', port=5000)
