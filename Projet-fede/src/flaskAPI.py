@@ -27,7 +27,6 @@ def video():
         return jsonify({"error": str(e)}), 500
 
 def getVideo():
-    # Placeholder function to simulate video retrieval
     return "Video content or URL"
     
 

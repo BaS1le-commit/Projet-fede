@@ -42,7 +42,8 @@ git config --global user.email "huetbasile@gmail.com"
 
 git clone https://github.com/BaS1le-commit/Projet-fede.git
 
-cd Projet-fede/
+cd Projet-fede/Projet-fede
+
 
 if [ -f "requirements.txt" ]; then
     echo "Installation des dépendances Python..."

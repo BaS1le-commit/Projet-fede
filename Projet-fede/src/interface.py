@@ -93,8 +93,7 @@ class App(ctk.CTk):
             cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
             cv2.putText(frame, name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
 
-        # Redimensionne et écrit la frame annotée pour l'enregistrement
-        resized_frame = cv2.resize(frame, (640, 480))  # même taille que le VideoWriter
+        resized_frame = cv2.resize(frame, (640, 480))  
         self.video_writer.write(resized_frame)
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
